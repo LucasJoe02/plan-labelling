@@ -6,6 +6,7 @@ PNG_DIR = "pngs"
 DPI = 300
 
 def pdftopng():
+    """Convert all pdfs from a folder into pngs of each page"""
     for filename in os.listdir(PDF_DIR):
         name, file_extension = os.path.splitext(filename)
         f = os.path.join(PDF_DIR, filename)

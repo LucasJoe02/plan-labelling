@@ -1,11 +1,12 @@
 import fitz
 import os
 
-PDF_DIR = "plans"
-PNG_DIR = "pngs"
-DPI = 600
-PAGE_NUMS = "page_nums.txt"
 USER_INPUT = True
+
+PDF_DIR = "testpdf"
+PNG_DIR = "testimg"
+DPI = 50
+PAGE_NUMS = "page_nums.txt"
 
 def get_page_numbers():
     """Return a list of page nums from a file"""
@@ -18,7 +19,6 @@ def get_page_numbers():
 
 def get_page_num(i, page_numbers):
     """Either get a page number from user input or the page_numbers list"""
-    page_num = int()
     if USER_INPUT:
         page_num = int(input("Enter page num of lighting page: "))
         # Uncomment to fill page_nums.txt
@@ -26,7 +26,7 @@ def get_page_num(i, page_numbers):
         #     file.write(str(page_num)+"\n")
     else:
         page_num = page_numbers[i]
-    return page_num
+    return page_num 
 
 def extract_pages():
     """Convert a given page of a pdf to a png and save to png folder"""

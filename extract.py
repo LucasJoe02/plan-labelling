@@ -1,11 +1,11 @@
 import fitz
 import os
 
-USER_INPUT = True
+USER_INPUT = False
 
-PDF_DIR = "testpdf"
-PNG_DIR = "testimg"
-DPI = 50
+PDF_DIR = "plans"
+PNG_DIR = "pngs"
+DPI = 150
 PAGE_NUMS = "page_nums.txt"
 
 def get_page_numbers():
@@ -26,7 +26,7 @@ def get_page_num(i, page_numbers):
         #     file.write(str(page_num)+"\n")
     else:
         page_num = page_numbers[i]
-    return page_num 
+    return page_num
 
 def extract_pages():
     """Convert a given page of a pdf to a png and save to png folder"""

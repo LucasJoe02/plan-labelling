@@ -1,9 +1,9 @@
 import fitz
 import os
 
-USER_INPUT = False
+USER_INPUT = True
 
-PDF_DIR = "plans"
+PDF_DIR = "test"
 PNG_DIR = "pngs"
 DPI = 150
 PAGE_NUMS = "page_nums.txt"
@@ -13,17 +13,18 @@ def get_page_numbers():
     numbers = []
     with open(PAGE_NUMS, "r") as file:
         for line in file:
-            number = int(line.strip())
+            linelist = line.split()
+            number = int(linelist[0].strip())
             numbers.append(number)
     return numbers
 
-def get_page_num(i, page_numbers):
+def get_page_num(i, page_numbers, name):
     """Either get a page number from user input or the page_numbers list"""
     if USER_INPUT:
         page_num = int(input("Enter page num of lighting page: "))
         # Uncomment to fill page_nums.txt
-        # with open(PAGE_NUMS, "a") as file:
-        #     file.write(str(page_num)+"\n")
+        with open(PAGE_NUMS, "a") as file:
+            file.write(str(page_num)+" "+name+"\n")
     else:
         page_num = page_numbers[i]
     return page_num
@@ -38,7 +39,7 @@ def extract_pages():
         f = os.path.join(PDF_DIR, filename)
         if file_extension.lower() == '.pdf':
             print(name)
-            page_num = get_page_num(i, page_numbers)
+            page_num = get_page_num(i, page_numbers, name)
             doc = fitz.open(f)
             if page_num <= doc.page_count and page_num > 0:
                 page = doc[page_num-1]

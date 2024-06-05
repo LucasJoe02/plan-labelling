@@ -2,8 +2,8 @@ import fitz
 import os
 
 PDF_DIR = "pdfs"
-PNG_DIR = "pngs"
-DPI = 300
+PNG_DIR = "pdfs"
+DPI = 150
 
 def pdftopng():
     """Convert all pdfs from a folder into pngs of each page"""

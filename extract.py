@@ -3,7 +3,7 @@ import os
 
 USER_INPUT = True
 
-PDF_DIR = "test"
+PDF_DIR = "plans"
 PNG_DIR = "pngs"
 DPI = 150
 PAGE_NUMS = "page_nums.txt"

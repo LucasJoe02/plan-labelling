@@ -22,7 +22,6 @@ def get_page_num(i, page_numbers, name):
     """Either get a page number from user input or the page_numbers list"""
     if USER_INPUT:
         page_num = int(input("Enter page num of lighting page: "))
-        # Uncomment to fill page_nums.txt
         with open(PAGE_NUMS, "a") as file:
             file.write(str(page_num)+" "+name+"\n")
     else:

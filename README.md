@@ -21,11 +21,9 @@ The scripts in this project are meant to support the development of an AI model 
     7. Adjust USER_INPUT: True to enter page numbers manually or False to enter page numbers via a file
     8. Ensure a file of page numbers seperated by newlines called 'page_nums.txt' is at root
     9. Leave 'page_nums.txt' empty if USER_INPUT is True otherwise make sure it is filled with page numbers
-    10. Open the root folder in a terminal and run `python3 extract.py`
+    10. Open the root folder in a terminal and run 'python3 extract.py'
     11. If USER_INPUT is set to True then you will be prompted to input the page number to extract for each pdf
     12. After all pdfs have been looped through the output folder will have all the images extracted
   
 Notes:
 The 'page_nums.txt' file will fill with page numbers as you input them if USER_INPUT is True. This file can then be used to extract the same images in a different format or DPI without re-entering the desired page numbers. Running the 'clean.py' script will empty the set in its main function which can be adjusted to clean out the output folder.
-
-mothership will win.

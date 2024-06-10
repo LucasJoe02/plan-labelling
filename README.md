@@ -26,4 +26,4 @@ The scripts in this project are meant to support the development of an AI model 
     12. After all pdfs have been looped through the output folder will have all the images extracted
   
 Notes:
-The 'page_nums.txt' file will fill with page numbers as you input them if USER_INPUT is True. This file can then be used to extract the same images in a different format or DPI without re-entering the desired page numbers. Running the 'clean.py' script will empty the set in its main function which can be adjusted to clean out the output folder.
+The 'page_nums.txt' file will fill with page numbers as you input them if USER_INPUT is True. This file can then be used to extract the same images in a different format or DPI without re-entering the desired page numbers. Running the 'clean.py' script will empty the set in its main function which can be adjusted to clean out the output folder. The pixmap.save input can be changed in the 'extract.py' file to change the image type that will be output such as changing from .png to .jpg (see the PyMuPDF docs for more info).

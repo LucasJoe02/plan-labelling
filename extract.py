@@ -8,10 +8,10 @@ PNG_DIR = "pngs"
 DPI = 150
 PAGE_NUMS = "page_nums.txt"
 
-def get_page_numbers():
+def get_page_numbers(nums):
     """Return a list of page nums from a file"""
     numbers = []
-    with open(PAGE_NUMS, "r") as file:
+    with open(nums, "r") as file:
         for line in file:
             linelist = line.split()
             number = int(linelist[0].strip())
@@ -32,7 +32,7 @@ def extract_pages():
     """Convert a given page of a pdf to a png and save to png folder"""
     page_numbers = []
     if not USER_INPUT:
-        page_numbers = get_page_numbers()
+        page_numbers = get_page_numbers(PAGE_NUMS)
     for i, filename in enumerate(sorted(os.listdir(PDF_DIR))):
         name, file_extension = os.path.splitext(filename)
         f = os.path.join(PDF_DIR, filename)

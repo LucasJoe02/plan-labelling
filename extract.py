@@ -1,12 +1,25 @@
+"""
+PDF Image Extractor
+====================
+
+This module provides functionality to extract images from PDF files. 
+It leverages libraries such as PyMuPDF (fitz) to read and process PDF documents, 
+identifying and saving images of selected pages to a specified directory.
+Directions of use can be found in the README.
+
+Author Lucas Redding (lre61) 2024
+-------------
+"""
+
 import fitz
 import os
 
-USER_INPUT = True
+USER_INPUT = True           # True to manually input page numbers for pdf extraction or False to read page numbers from file
 
-PDF_DIR = "plans"
-PNG_DIR = "pngs"
-DPI = 150
-PAGE_NUMS = "page_nums.txt"
+PDF_DIR = "plans"           # Directory containing pdfs
+PNG_DIR = "pngs"            # Directory containing pngs
+DPI = 150                   # DPI to extract images at
+PAGE_NUMS = "page_nums.txt" # File to save or read page numbers from
 
 def get_page_numbers(nums):
     """Return a list of page nums from a file"""

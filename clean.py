@@ -1,3 +1,13 @@
+"""
+Directory Cleaner
+====================
+
+This module cleans a given directory.
+
+Author Lucas Redding (lre61) 2024
+-------------
+"""
+
 import os
 
 def clean(folder_path):
@@ -9,7 +19,7 @@ def clean(folder_path):
 
 
 def main():
-    clean('pngs')
+    clean(input("Name of folder to clean: "))
 
 if __name__ == "__main__":
     main()

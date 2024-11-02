@@ -1,29 +1,24 @@
-Plan Labelling Scripts by Lucas Redding (lre61) (SENG402 Building Plan AI Automation Project)
+# PDF Plan Extraction Toolkit
 
-**Introduction**
+This toolkit provides functionality for cleaning converting PDF pages to PNG images, and extracting specific pages as images from multiple PDFs. The modules are designed to work with PDF files in specified input directories, producing images in PNG format at a chosen DPI resolution.
 
-The scripts in this project are meant to support the development of an AI model aimed at searching building plan images for doors and labelling the doors based on the category they fall into. The motivation for this is to save time and resources when attempting to provide quotes to building companies for doors when they request them from the client company 'Independent Doors' (ID). These scripts are used to take groups of building plans as PDFs and extract useful images from those plans that can then be used to train the AI model. There is the ability to decide on the DPI and format of the images as well as the page being extracted indivdually for each building plan pdf.
+## Overview
+This project consists of three main Python scripts:
 
-**Dependencies:**
+* convert.py: Converts a single page of a PDF to a PNG image.
+* extract.py: Extracts images of selected pages from multiple PDFs.
+* clean.py: Cleans a specified directory by removing all files in it.
 
-    1. Python 3.8.10 (May work on other versions of Python 3)
-    2. PyMuPDF (Installed with 'pip install PyMuPDF')
-    3. Linux Mint OS (Other OSs may also work)
+## Requirements
+* Python 3.x
+* PyMuPDF (fitz) library for PDF processing:
+    ```
+    pip install pymupdf
+    ```
+## Usage
 
-**How to run the application:**
+1. PDF Image Converter: Use `python convert.py` to convert a single PDF page to PNG. The script will prompt for details about input and output folders, DPI, PDF filename, and the desired page number.
 
-    1. Ensure you have an input and output folder in your root directory
-    2. Fill the input folder with building plan pdf documents
-    3. Ensure that the output folder is empty
-    4. Open the extract.py file to set the desired constants
-    5. Set the values for PDF_DIR and PNG_DIR to the names of your input and output files respectively
-    6. Set the desired DPI for the output image
-    7. Adjust USER_INPUT: True to enter page numbers manually or False to enter page numbers via a file
-    8. Ensure a file of page numbers seperated by newlines called 'page_nums.txt' is at root
-    9. Leave 'page_nums.txt' empty if USER_INPUT is True otherwise make sure it is filled with page numbers
-    10. Open the root folder in a terminal and run 'python3 extract.py'
-    11. If USER_INPUT is set to True then you will be prompted to input the page number to extract for each pdf
-    12. After all pdfs have been looped through the output folder will have all the images extracted
-  
-Notes:
-The 'page_nums.txt' file will fill with page numbers as you input them if USER_INPUT is True. This file can then be used to extract the same images in a different format or DPI without re-entering the desired page numbers. Running the 'clean.py' script will empty the set in its main function which can be adjusted to clean out the output folder. The pixmap.save input can be changed in the 'extract.py' file to change the image type that will be output such as changing from .png to .jpg (see the PyMuPDF docs for more info).
+2. PDF Image Extractor: Run `python extract.py` to batch extract pages from PDFs in a folder. You can choose to manually enter page numbers or use a text file listing page numbers for each PDF.
+
+3. Directory Cleaner: Run `python clean.py` to clear a specified directory. You'll be prompted for the directory path.
